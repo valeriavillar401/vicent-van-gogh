@@ -1,0 +1,276 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #2b7cbe;
+    color: #222;
+    line-height: 1.6;
+}
+
+main {
+    width: 90%;        
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #e0dede;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+}
+
+h5 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 20px;
+    
+}
+
+h6 {
+    font-family: serif;
+    font-size: 20px;
+}
+
+
+header {
+    background-color: #214964;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 2px solid #252c58;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 900px) {
+    header {
+        background-color: #0f3f68;
+    }
+}
+
+@media (min-width: 1300px) {
+    header {
+        background-color: #11171b;
+    }
+}
+
+.logo a {
+    color: #f3c669; 
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-top: 0.5rem;
+}
+
+.nav-menu a {
+    color: #116af0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #becbd3;
+}
+
+
+.fondo {
+    background-color: #81b3c0;
+}
+
+article {
+    width: 100%;         
+    font-size: 30px;      
+    background: #087ba8;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #1E90FF;
+    margin-bottom: 1rem;
+}
+
+.botoncito {
+    display: inline-block;
+    background-color: #5a8899;
+    color: #ebebeb; 
+    padding: 12px 24px; 
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.botoncito:hover {
+    background-color: #3f9ab6; 
+    transform: translateY(-2px); 
+}
+
+.imagencentrada {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; 
+}
+
+img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+}
+
+
+.galeria-seccion {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.galeria-seccion h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #141414;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #1e1e2f;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+
+.toggle-checkbox {
+    display: none;
+}
+
+.boton-desplegable {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #1f6f8b;
+    color: rgb(20, 19, 19);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.2s;
+    font-size: 0; 
+}
+
+.boton-desplegable::after {
+    font-size: 1rem; 
+    content: " Ver biografía completa";
+}
+
+.boton-desplegable:hover {
+    background-color: #164e63; 
+}
+
+.contenido-desplegable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+}
+
+.toggle-checkbox:checked ~ .contenido-desplegable {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.toggle-checkbox:checked + .boton-desplegable::after {
+    content: " Ocultar biografía";
+}
+
+
+.estilo {
+    background-color: #697f94;
+    color: #09628b;
+    text-align: center;
+    padding: 20px 15px;
+    font-family: Arial, sans-serif;
+}
+
+.enlaces {
+    color: #444e63;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 13px;
+}
+body.dark-mode {
+    background-color: #292929;
+    color: #fff;
+}
+
+
+body.dark-mode .tarjeta {
+    background-color: #242f36;
+    color: #fff;
+}
+p{
+    color: #111111;
+}
